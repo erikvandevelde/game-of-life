@@ -52,7 +52,7 @@
                     </execution>
                 </executions>
             </plugin>
-		<plugins>			
+		</plugins>			
 	</build>
     <reporting>
         <plugins>
@@ -82,45 +82,6 @@
                 <artifactId>maven-surefire-report-plugin</artifactId>
                 <version>2.6</version>
             </plugin -->
-			<plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.10</version>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>unit-tests</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                        <configuration>
-                            <skip>false</skip>
-                            <includes>
-                                <include>**/When*.java</include>
-                                <include>**/*Test.java</include>
-                            </includes>
-                            <excludes>
-                                <exclude>%regex[.*integration.*]</exclude>
-                            </excludes>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>integration-tests</id>
-                        <phase>integration-test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                        <configuration>
-                            <skip>false</skip>
-                            <includes>
-                                <include>%regex[.*integration.*]</include>
-                            </includes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
